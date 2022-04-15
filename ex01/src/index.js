@@ -9,8 +9,9 @@ function* multiplication(x) {
 } 
 
 var num = multiplication(3);
-for(let n of num) {n +=1; console.log(n);
-    
+for(let i = 0; i < 3; i++) {
+    console.log(num.next().value);
 }
+    
 // Only change code above this line
 module.exports = multiplication;

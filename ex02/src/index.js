@@ -1,4 +1,5 @@
 // Only change code below this line
+let array =[];
 function* myGenerator() {
     yield insideGenerator1();
     yield insideGenerator2();
@@ -7,21 +8,38 @@ function* myGenerator() {
 
 function *insideGenerator1()
 {
-    for(let i=1; i < - 5; i++)
+    for(let i=1; i <= 5; i++)
     {
-        var x = [];
-        x= x + i;
-        console.log(x);
-        yield x;
+       yield x = i;
+       array.push(x);
     }
-    return x;
+    return;
 } 
 
-const test = insideGenerator1();
-for(let i=0; i<test; i++)
+function* insideGenerator2(){
+for(let i= 10; i<= 15; i++)
 {
-    array = test.next();
+yield x = 1;
+}
+return;
 }
 
+function* insideGenerator3() {
+    for (let i = 6; i <= 9; i++) {
+        yield x = 1;
+    }
+    return;
+}
+const iterator = myGenerator();
+const fifteenArray = [];
+
+for (let i = 0; i < 16; i++) {
+    if (i < 15) {
+        fifteenArray.push(`${iterator.next().value}#,`);     
+    } else {
+        fifteenArray.push(`${iterator.next().value}!`);
+    }
+}
+console.log(...fifteenArray);
 // Only change code above this line
 module.exports = { fifteenArray, myGenerator };
